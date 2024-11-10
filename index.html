@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/index.css">
-  <title>Consuming API</title>
-</head>
-<body>
-  <div class="container">
-    <h1 class="title">Add an image by clicking!</h1>
-    <h3>Pictures of a fox API will appear below</h3>
-    <p>Each image loaded as long as it is in screen view otherwise it will wait to be loaded.</p>
-        
-    <button>Add images</button>
-    <div id="images"></div>
-        
-    <p><a href="https://github.com/gervislm/consumingapi-lazy">See on GitHub.</a></p>
-  </div>
-  <script type="module" src="./src/index.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Consuming API</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sección principal de contenido -->
+      <main>
+        <header>
+          <h1 class="title">Add an image by clicking!</h1>
+          <h2>Pictures of a fox API will appear below</h2>
+          <p>
+            Each image is loaded only when it comes into view. Otherwise, it
+            waits to be loaded until visible on screen.
+          </p>
+        </header>
+
+        <!-- Botón para agregar imágenes -->
+        <button aria-label="Add new images" class="add-image-btn">
+          Add images
+        </button>
+
+        <!-- Contenedor donde se agregarán las imágenes -->
+        <section id="images" aria-live="polite"></section>
+      </main>
+
+      <!-- Pie de página con enlace a GitHub -->
+      <footer>
+        <p>
+          <a
+            href="https://github.com/gervislm/consumingapi-lazy"
+            target="_blank"
+            rel="noopener noreferrer"
+            >See on GitHub.</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <!-- Cargar script con módulo ES6 -->
+    <script type="module" src="./src/index.js"></script>
+  </body>
 </html>
