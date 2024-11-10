@@ -1,12 +1,15 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  width: 100%;
-  height: 100%;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: #eee;
+  font-family: Verdana, sans-serif;
 }
 
 .title {
@@ -14,13 +17,11 @@ body {
 }
 
 .container {
-  width: 40%;
-  margin: 100px auto;
+  width: 80%;
+  margin: 20px auto;
   text-align: center;
-  font-family: Verdana, sans-serif;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   background-color: #ccc;
-  padding: 12px 20px;
+  padding: 20px;
   border-radius: 4px;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
@@ -34,7 +35,7 @@ button {
   margin: 10px;
   border: 1px solid #008604;
   border-radius: 4px;
-  cursor: pointer;;
+  cursor: pointer;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
 
@@ -43,16 +44,74 @@ button:hover {
   transform: scale(1.03);
 }
 
+#images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
 #images img {
-  width: 60%;
+  width: 100%;
+  height: auto;
   object-fit: cover;
-  margin-top: 8px;
-  padding: 0 4px;
   border-radius: 10px;
 }
 
 p > a {
   text-decoration: none;
   color: #0d5ab0;
+}
 
+/* Footer Styling */
+footer {
+  margin-top: auto; /* To push footer to the bottom */
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsive Styles */
+
+/* Para pantallas grandes (escritorios) */
+@media (min-width: 1024px) {
+  .container {
+    width: 40%;
+  }
+
+  #images {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  }
+}
+
+/* Para pantallas medianas (tabletas) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .container {
+    width: 60%;
+  }
+
+  #images {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  }
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  #images {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  }
+
+  button {
+    width: 80%; /* Hacer los botones más grandes en pantallas pequeñas */
+  }
 }
